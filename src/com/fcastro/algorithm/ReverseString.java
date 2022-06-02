@@ -5,9 +5,10 @@ public class ReverseString {
         ReverseString o = new ReverseString();
 
         String s = "My name is Alok";
-        System.out.println("ReverseStringUsingSplit ('" + s + "'): " + o.reverseStringUsingSplit(s));
-        System.out.println("ReverseStringUsingChar('" + s + "'): " + o.reverseStringUsingChar(s));
-        System.out.println("ReverseStringUsingStringBuffer('" + s + "'): " + o.reverseStringUsingStringBuffer(s));
+        System.out.println("ReverseStringUsingSplit: " + o.reverseStringUsingSplit(s));
+        System.out.println("ReverseStringUsingChar: " + o.reverseStringUsingChar(s));
+        System.out.println("ReverseStringUsingStringBuffer: " + o.reverseStringUsingStringBuffer(s));
+        System.out.println("ReverseStringRecursively: " + o.reverseStringUsingStringBuffer(s));
     }
 
     /*Reverse a String
@@ -54,5 +55,12 @@ public class ReverseString {
 
         StringBuffer sb = new StringBuffer(s);
         return sb.reverse().toString();
+    }
+
+    String reverseStringRecursively(String string){
+        if (string.length() > 1){
+            return reverseStringRecursively(string.substring(string.length()-1, 0));
+        }
+        return string;
     }
 }
