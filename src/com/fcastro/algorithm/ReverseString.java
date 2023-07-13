@@ -53,8 +53,12 @@ public class ReverseString {
         if (s == null) return "";
         if (s.length() < 2) return s;
 
-        StringBuffer sb = new StringBuffer(s);
-        return sb.reverse().toString();
+        StringBuffer output = new StringBuffer();
+        for (int i = s.length() - 1; i >= 0; i--)
+            output.append(s.charAt(i));
+
+        return output.toString();
+       // return sb.reverse().toString();
     }
 
     String reverseStringRecursively(String string){

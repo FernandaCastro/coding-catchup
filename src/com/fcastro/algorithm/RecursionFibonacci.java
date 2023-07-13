@@ -8,29 +8,23 @@ import java.util.List;
 //                       0  1  2  3  4  5  6   7   8   9  10  11   12
 public class RecursionFibonacci {
 
-    int recursiveFibonacci(int index){
-        if (index < 2)
-            return index;
-
-        return recursiveFibonacci(index-2) + recursiveFibonacci(index-1);
+    public static int recursiveFibonacci(int index){
+        return recursiveFibonacci(index, new ArrayList(List.of(0,1)));
     }
 
-    int iterativeFibonacci(int index){
+    public static int recursiveFibonacci(int index, List<Integer> memo){
         if (index < 2)
             return index;
 
-        int previous1 = 0;
-        int previous2 = 1;
-        int current = 0;
-        for(int i = 2; i<=index; i++){
-            current = previous1 + previous2;
-            previous1 = previous2;
-            previous2 = current;
+        if (memo.size() > index){
+            return memo.get(index);
         }
-        return current;
+
+        memo.add(recursiveFibonacci(index-2, memo) + recursiveFibonacci(index-1, memo));
+        return memo.get(index);
     }
 
-    int iterativeFibonacci2(int index){
+    public static int iterativeFibonacci(int index){
         List<Integer> fibonacci = new ArrayList(List.of(0,1));
 
         for(int i = 2; i<=index; i++){
@@ -40,21 +34,9 @@ public class RecursionFibonacci {
     }
 
     public static void main(String[] args) {
-        RecursionFibonacci o = new RecursionFibonacci();
-        System.out.println("Recursive Index 02(01): " + o.recursiveFibonacci(2));
-        System.out.println("Recursive Index 03(02): " + o.recursiveFibonacci(3));
-        System.out.println("Recursive Index 04(03): " + o.recursiveFibonacci(4));
-        System.out.println("Recursive Index 07(13): " + o.recursiveFibonacci(7));
-        System.out.println("Recursive Index 10(55): " + o.recursiveFibonacci(10));
-        System.out.println("Recursive Index 12(144): " + o.recursiveFibonacci(12));
 
+        System.out.println("Recursive Index 12(144): " + recursiveFibonacci(120));
         System.out.println("-------");
-
-        System.out.println("Iterative Index 02(01): " + o.iterativeFibonacci2(2));
-        System.out.println("Iterative Index 03(02): " + o.iterativeFibonacci2(3));
-        System.out.println("Iterative Index 04(03): " + o.iterativeFibonacci2(4));
-        System.out.println("Iterative Index 07(13): " + o.iterativeFibonacci2(7));
-        System.out.println("Iterative Index 10(55): " + o.iterativeFibonacci2(10));
-        System.out.println("Iterative Index 12(144): " + o.iterativeFibonacci2(12));
+        System.out.println("Iterative Index 12(144): " + iterativeFibonacci(120));
     }
 }
