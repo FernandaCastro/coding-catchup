@@ -1,32 +1,29 @@
 package com.fcastro.dataStructure;
 
-import java.util.Deque;
-import java.util.Stack;
-
 public class MyQueueAsStack <T> {
 
-    Node bottom;
-    Node top;
-    int size;
+    private Node bottom;
+    private Node top;
+    private int size;
 
-    MyQueueAsStack(){
+    public MyQueueAsStack(){
         this.bottom = null;
         this.top = null;
         this.size = 0;
     }
 
-    boolean isEmpty(){
+    public boolean isEmpty(){
         return (this.size==0);
     }
 
-    T peek(){
+    public T peek(){
         if (isEmpty())
             return null;
 
         return (T) this.bottom.value;
     }
 
-    void push(T value){
+    public void push(T value){
         Node newNode = new Node(value);
         if (isEmpty()){
             this.bottom = newNode;
@@ -38,7 +35,7 @@ public class MyQueueAsStack <T> {
         this.size++;
     }
 
-    T pop(){
+    public T pop(){
         if (isEmpty())
             return null;
 
@@ -62,9 +59,9 @@ public class MyQueueAsStack <T> {
                 '}';
     }
 
-    class Node<T>{
-        T value;
-        Node next;
+    private class Node<T>{
+        private T value;
+        private Node next;
 
         Node(T value){
             this.value = value;
@@ -85,12 +82,12 @@ public class MyQueueAsStack <T> {
         myQueueAsStack.push(1);
         myQueueAsStack.push(2);
 
-        System.out.println(myQueueAsStack.toString());
+        System.out.println(myQueueAsStack);
 
         System.out.println("Peek: " + myQueueAsStack.peek());
         System.out.println("Pop: " + myQueueAsStack.pop());
         System.out.println("isEmpty: " + myQueueAsStack.isEmpty());
 
-        System.out.println(myQueueAsStack.toString());
+        System.out.println(myQueueAsStack);
     }
 }

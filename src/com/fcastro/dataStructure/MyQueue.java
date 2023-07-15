@@ -75,12 +75,12 @@ public class MyQueue <T>{
         myQueue.enqueue("Matt");
         myQueue.enqueue("Pavel");
         myQueue.enqueue("Samir");
-        System.out.println(myQueue.toString());
+        System.out.println(myQueue);
         System.out.println("Peek: " + myQueue.peek());
         myQueue.dequeue();
         myQueue.dequeue();
         myQueue.dequeue();
         myQueue.dequeue();
-        System.out.println(myQueue.toString());
+        System.out.println(myQueue);
     }
 }

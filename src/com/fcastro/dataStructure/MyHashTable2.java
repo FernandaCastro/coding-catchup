@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 //Using LinkedList
 public class MyHashTable2<K,V> {
-    private Entry<K, V>[] table;
+    private final Entry<K, V>[] table;
 
     MyHashTable2(int size) {
         this.table = new Entry[size];
@@ -49,12 +49,12 @@ public class MyHashTable2<K,V> {
 
         if (entry != null) {
             if (entry.next == null)
-                return (V) entry.value;
+                return entry.value;
 
             var bucket = entry;
             while (bucket != null) {
                 if (bucket.key == key)
-                    return (V) bucket.value;
+                    return bucket.value;
                 bucket = bucket.next;
             }
         }
@@ -69,13 +69,13 @@ public class MyHashTable2<K,V> {
 
             if(entry!=null){
                 keys = Arrays.copyOf(keys, keys.length + 1);
-                keys[keys.length - 1] = (K) entry.key;
+                keys[keys.length - 1] = entry.key;
 
                 if (entry.next != null) {
                     var bucket = entry.next;
                     while (bucket != null){
                         keys = Arrays.copyOf(keys, keys.length + 1);
-                        keys[keys.length - 1] = (K) bucket.key;
+                        keys[keys.length - 1] = bucket.key;
                         bucket = bucket.next;
                     }
                 }
@@ -86,28 +86,28 @@ public class MyHashTable2<K,V> {
 
     @Override
     public String toString() {
-        String s =  "MyHashTable{" +
-                "data= [" ;
+        StringBuilder s = new StringBuilder("MyHashTable{" +
+                "data= [");
         for(int i = 0; i < this.table.length; i++){
             var entry = table[i];
-            s += "[";
+            s.append("[");
             if (entry != null ) {
                 if (entry.next == null){
-                    s += entry.key + ":" + entry.value;
+                    s.append(entry.key).append(":").append(entry.value);
                 }else{
-                    s += entry.key + ":" + entry.value;
+                    s.append(entry.key).append(":").append(entry.value);
                     var bucket = entry.next;
                     while (bucket != null){
-                        s += ", " + bucket.key + ":" + bucket.value;
+                        s.append(", ").append(bucket.key).append(":").append(bucket.value);
                         bucket = bucket.next;
                     }
                 }
             }
-            s += "], ";
+            s.append("], ");
         }
 
-        s += '}';
-        return s;
+        s.append('}');
+        return s.toString();
     }
 
     private class Entry<K, V>{
@@ -131,7 +131,7 @@ public class MyHashTable2<K,V> {
         o.set("apples", 10);
         System.out.println("oranges= " + o.get("oranges"));
         System.out.println("apples= " + o.get("apples"));
-        System.out.println(o.toString());
+        System.out.println(o);
         System.out.println(Arrays.toString(o.keys()));
     }
 }

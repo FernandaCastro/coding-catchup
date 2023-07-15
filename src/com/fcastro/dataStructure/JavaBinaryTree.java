@@ -33,12 +33,11 @@ public class JavaBinaryTree {
     }
 
     String printAll(SortedSet<Integer> tree){
-        String s = "{";
+        StringBuilder sBuilder = new StringBuilder("{");
         for(int e: tree){
-            s += e + ",";
+            sBuilder.append(e).append(",");
         }
-        s = s.substring(0, s.length()-1) + "}";
-        return s;
+        return sBuilder.substring(0, sBuilder.length()-1) + "}";
     }
 
     void printTreeMap(boolean desc) {

@@ -70,13 +70,13 @@ public class QuickSort {
     }
 
     String print(String note, int[] array){
-        String sorted = "";
+        StringBuilder sorted = new StringBuilder();
         for(int i=0; i<array.length; i++){
-            sorted += array[i] + " ";
+            sorted.append(array[i]).append(" ");
         }
 
         System.out.println(note + sorted);
-        return sorted;
+        return sorted.toString();
     }
 
     public static void main(String[] args) {

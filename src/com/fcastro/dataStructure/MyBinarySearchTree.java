@@ -88,7 +88,7 @@ public class MyBinarySearchTree {
                         }
                     }
 
-                    //Option 2: Right child which doesnt have a left child
+                    //Option 2: Right child which doesn't have a left child
                 } else if (currentNode.right.left == null) {
                     currentNode.right.left = currentNode.left;
                     if (parentNode == null) {
@@ -116,7 +116,7 @@ public class MyBinarySearchTree {
                         leftmost = leftmost.left;
                     }
 
-                    //Parent's left subtree is now leftmost's right subtree
+                    //Parent's left subtree is now leftmost right subtree
                     leftmostParent.left = leftmost.right;
                     leftmost.left = currentNode.left;
                     leftmost.right = currentNode.right;
@@ -165,17 +165,6 @@ public class MyBinarySearchTree {
         queue.add(currNode);
     }
 
-    /*
-             9
-        04        20
-      01  06    15  170
-
-     DFS: 9, 4, 1, 20, 15, 170
-    */
-    void deapthFirstSearch(){
-
-    }
-
 
     class Node {
         int value;
@@ -211,7 +200,7 @@ public class MyBinarySearchTree {
         myBST.insert(170);
         myBST.insert(15);
         myBST.insert(1);
-        System.out.println(myBST.toString());
+        System.out.println(myBST);
 
         System.out.println("Lookup 15: " + myBST.lookup(15));
         System.out.println("Lookup 20: " + myBST.lookup(20));

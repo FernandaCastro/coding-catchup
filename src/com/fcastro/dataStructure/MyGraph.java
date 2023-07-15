@@ -48,19 +48,19 @@ public class MyGraph {
     }
 
     private String showConnections() {
-        String concatConnections = "";
+        StringBuilder concatConnections = new StringBuilder();
         var allNodes = this.adjacentList.keySet();
         for (Character node : allNodes) {
             var nodeConnections = this.adjacentList.get(node);
-            String connections = "";
+            StringBuilder connections = new StringBuilder();
             if(nodeConnections!=null) {
                 for (Character edge : nodeConnections) {
-                    connections += edge + " ";
+                    connections.append(edge).append(" ");
                 }
             }
-            concatConnections += "\n" + node + "--> " + connections;
+            concatConnections.append("\n").append(node).append("--> ").append(connections);
         }
-        return concatConnections;
+        return concatConnections.toString();
     }
 
 

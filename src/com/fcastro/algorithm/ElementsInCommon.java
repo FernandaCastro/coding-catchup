@@ -1,5 +1,6 @@
 package com.fcastro.algorithm;
 
+import java.util.Arrays;
 import java.util.HashSet;
 
 public class ElementsInCommon {
@@ -41,8 +42,7 @@ public class ElementsInCommon {
     boolean findElementInCommon2(String[] array1, String[] array2){
         //Insert all elements from array1 to a set
         HashSet<String> map = new HashSet<>();
-        for(int i=0; i<array1.length; i++)
-            map.add(array1[i]);
+        map.addAll(Arrays.asList(array1));
 
         //Iterate through array2 and check if it exists in the set
         for(int i=0; i<array2.length; i++){

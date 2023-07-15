@@ -53,9 +53,7 @@ public class FloodDepthNaive {
         }
 
         Optional<Integer> maxDepth = Arrays.stream(floodDepth).max(Integer::compareTo);
-        if (maxDepth.isPresent())
-            return maxDepth.get();
-        return 0;
+        return maxDepth.orElse(0);
     }
 
     private void setRemainingToZero(int beginIndex, int[] a){

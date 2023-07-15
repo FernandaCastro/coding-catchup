@@ -9,7 +9,7 @@ import java.util.List;
 public class RecursionFibonacci {
 
     public static int recursiveFibonacci(int index){
-        return recursiveFibonacci(index, new ArrayList(List.of(0,1)));
+        return recursiveFibonacci(index, new ArrayList<Integer>(List.of(0,1)));
     }
 
     public static int recursiveFibonacci(int index, List<Integer> memo){
@@ -25,7 +25,7 @@ public class RecursionFibonacci {
     }
 
     public static int iterativeFibonacci(int index){
-        List<Integer> fibonacci = new ArrayList(List.of(0,1));
+        List<Integer> fibonacci = new ArrayList<Integer>(List.of(0,1));
 
         for(int i = 2; i<=index; i++){
             fibonacci.add( fibonacci.get(i-1) + fibonacci.get(i-2));

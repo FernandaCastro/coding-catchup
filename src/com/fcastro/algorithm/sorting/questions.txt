@@ -18,7 +18,7 @@
         Radix or Counting sort: supposing the temperature records are integers, no decimal numbers.
         Quick sort: to avoid memory expensive usage.
 
-//#7 - Large user name database needs to be sorted. Data is very random.
+//#7 - Large username database needs to be sorted. Data is very random.
         Quick sort: in memory process.
 
 //#8 - You want to teach sorting for the first time

@@ -78,20 +78,20 @@ public class MyHashTable<K,V> {
 
     @Override
     public String toString() {
-        String s =  "MyHashTable{" +
-                "data= [" ;
+        StringBuilder s = new StringBuilder("MyHashTable{" +
+                "data= [");
         for(int i = 0; i < this.table.length; i++){
-            s += "[";
+            s.append("[");
             if (table[i]!=null ) {
                 for (int j = 0; j < size[i]; j++) {
-                    s += table[i][j] + ", ";
+                    s.append(table[i][j]).append(", ");
                 }
             }
-            s += "], ";
+            s.append("], ");
         }
 
-        s += '}';
-        return s;
+        s.append('}');
+        return s.toString();
     }
 
     private class Entry<K, V>{
@@ -123,7 +123,7 @@ public class MyHashTable<K,V> {
         o.set("bananas", 12);
         System.out.println("oranges= " + o.get("oranges"));
         System.out.println("apples= " + o.get("apples"));
-        System.out.println(o.toString());
+        System.out.println(o);
         System.out.println("Keys: "+ Arrays.toString(o.keys()));
     }
 }

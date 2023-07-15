@@ -68,13 +68,12 @@ public class MergeSort {
     }
 
     String print(String note, int[] array){
-        String sorted = "";
-        for(int i=0; i<array.length; i++){
-            sorted += array[i] + " ";
+        StringBuilder sortedBuilder = new StringBuilder();
+        for(int i = 0; i<array.length; i++){
+            sortedBuilder.append(array[i]).append(" ");
         }
-
-        System.out.println(note + sorted);
-        return sorted;
+        System.out.println(note + sortedBuilder.toString());
+        return sortedBuilder.toString();
     }
 
     public static void main(String[] args) {

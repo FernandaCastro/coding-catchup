@@ -5,7 +5,7 @@ import java.util.List;
 
 //Singly vs Doubly LinkedList
 //Pro: Less memory and faster deletion
-//Contra: Cannot be iterate backwards
+//Contra: Cannot be iterated backwards
 public class MyLinkedList<T>{
     Node head;
     Node tail;
@@ -104,14 +104,14 @@ public class MyLinkedList<T>{
     }
 
     String printList(){
-        String string = "{";
+        StringBuilder string = new StringBuilder("{");
         Node node  = head;
         while(node != null){
-            string +=  node.value + ", ";
+            string.append(node.value).append(", ");
             node = node.next;
         }
-        string += "}";
-        return string;
+        string.append("}");
+        return string.toString();
     }
 
     @Override

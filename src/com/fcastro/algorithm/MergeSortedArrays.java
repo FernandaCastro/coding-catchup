@@ -47,8 +47,8 @@ public class MergeSortedArrays {
         int i = 1;
         int j = 1;
         int k = 0;
-        Integer item1 = array1[0];
-        Integer item2 = array2[0];
+        int item1 = array1[0];
+        int item2 = array2[0];
 
         while ((i<=array1.length) || (j<=array2.length)){
 

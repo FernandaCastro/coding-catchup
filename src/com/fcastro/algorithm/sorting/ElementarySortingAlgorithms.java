@@ -85,9 +85,9 @@ public class ElementarySortingAlgorithms {
         sortingAlgorithms.insertionSort(array);
 
 
-        String sorted = "";
+        StringBuilder sorted = new StringBuilder();
         for(int i=0; i<array.length; i++){
-            sorted += array[i] + " ";
+            sorted.append(array[i]).append(" ");
         }
         System.out.println(sorted);
     }
