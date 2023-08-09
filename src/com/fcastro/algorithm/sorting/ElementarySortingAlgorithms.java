@@ -80,8 +80,8 @@ public class ElementarySortingAlgorithms {
 
         ElementarySortingAlgorithms sortingAlgorithms = new ElementarySortingAlgorithms();
 
-        //sortingAlgorithms.bubbleSort(array);
-        //sortingAlgorithms.selectionSort(array);
+        sortingAlgorithms.bubbleSort(array);
+        sortingAlgorithms.selectionSort(array);
         sortingAlgorithms.insertionSort(array);
 
 
