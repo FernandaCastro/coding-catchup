@@ -3,10 +3,10 @@ package com.fcastro.codility;
 import java.util.HashMap;
 import java.util.Stack;
 
-public class Brackets {
+public class ValidParentheses {
 
     public static void main(String[] args) {
-        var o = new Brackets();
+        var o = new ValidParentheses();
         System.out.println("() true => "+ o.isValid("()"));
         System.out.println("()[]{} true => "+ o.isValid("()[]{}"));
         System.out.println("(] false => "+ o.isValid("(]"));
